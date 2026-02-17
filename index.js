@@ -49,7 +49,15 @@ app.post('/orders', (req, res) => {
     });
   });
 });
-
+// Define a GET route for products
+app.get('/products', (req, res) => {
+  const products = [
+    { id: 1, name: 'Dog Food', price: 25.00 },
+    { id: 2, name: 'Cat Treats', price: 10.50 },
+    { id: 3, name: 'Bird Seed', price: 15.75 }
+  ];
+  res.json(products);
+});
 // Start the server using the port from environment variables
 app.listen(PORT, () => {
   console.log(`Order service is running on http://localhost:${PORT}`);
